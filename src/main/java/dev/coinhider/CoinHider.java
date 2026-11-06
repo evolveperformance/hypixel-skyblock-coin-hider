@@ -119,7 +119,7 @@ public final class CoinHider implements ClientModInitializer {
         List<ItemEntity> items = new java.util.ArrayList<>(
                 mc.level.getEntitiesOfClass(ItemEntity.class, mc.player.getBoundingBox().inflate(DUMP_RADIUS)));
         items.sort(java.util.Comparator.comparingDouble(e -> e.distanceToSqr(mc.player)));
-        long hidden = items.stream().filter(CoinHider::isCoin).count();
+        long hidden = items.stream().filter(CoinHider::shouldHide).count();
         source.sendFeedback(Component.literal("Coin Hider: " + items.size() + " dropped item(s) within " + DUMP_RADIUS
                         + " blocks, " + hidden + " hidden (closest " + Math.min(items.size(), CHAT_LIMIT)
                         + " shown, all in latest.log) | SkyBlock detected: " + (inSkyBlock ? "yes" : "no")
@@ -128,7 +128,7 @@ public final class CoinHider implements ClientModInitializer {
         for (int i = 0; i < items.size(); i++) {
             ItemEntity e = items.get(i);
             ItemStack s = e.getItem();
-            boolean coin = isCoin(e);
+            boolean coin = shouldHide(e);
             String line = s.getItem() + " | name='" + s.getHoverName().getString() + "'"
                     + " | tag='" + (e.getCustomName() == null ? "" : e.getCustomName().getString()) + "'"
                     + " | " + (int) Math.sqrt(e.distanceToSqr(mc.player)) + "m"
