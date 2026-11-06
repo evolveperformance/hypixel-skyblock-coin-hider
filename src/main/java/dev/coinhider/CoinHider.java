@@ -17,6 +17,7 @@ import net.minecraft.world.scores.DisplaySlot;
 import net.minecraft.world.scores.Objective;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.component.ResolvableProfile;
+import net.minecraft.world.item.component.CustomData;
 import com.mojang.authlib.properties.Property;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -129,14 +130,19 @@ public final class CoinHider implements ClientModInitializer {
             ItemEntity e = items.get(i);
             ItemStack s = e.getItem();
             boolean coin = shouldHide(e);
+            CustomData data = s.get(DataComponents.CUSTOM_DATA);
+            String sbId = data == null ? "none" : data.copyTag().getStringOr("id", "none");
+            String tex = texture(s);
+            String skin = tex.length() > 8 ? tex.substring(tex.length() - 8) : tex;
             String line = s.getItem() + " | name='" + s.getHoverName().getString() + "'"
-                    + " | tag='" + (e.getCustomName() == null ? "" : e.getCustomName().getString()) + "'"
+                    + " | id=" + sbId
+                    + " | skin=" + skin
                     + " | " + (int) Math.sqrt(e.distanceToSqr(mc.player)) + "m"
                     + " | hidden=" + coin;
             if (i < CHAT_LIMIT) {
                 source.sendFeedback(Component.literal(" - " + line).withStyle(coin ? ChatFormatting.GREEN : ChatFormatting.GRAY));
             }
-            LOG.info("[dump] {} | texture={} | components={}", line, texture(s), s.getComponents());
+            LOG.info("[dump] {} | texture={} | components={}", line, tex, s.getComponents());
         }
         return Command.SINGLE_SUCCESS;
     }
