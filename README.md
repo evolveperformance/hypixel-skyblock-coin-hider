@@ -5,7 +5,7 @@
 Hides coin drops on the ground in Hypixel SkyBlock, like the coins from the **Coin Talisman**.
 
 - **Coins are not drawn** on the floor.
-- **No pickup animation** (the coin flying into you) and **no pickup sound** for coins. Other sounds are untouched.
+- **No pickup animation** for coins (the coin flying into you).
 - **Only active in SkyBlock.** Detected from the sidebar scoreboard, so it does nothing anywhere else.
 - **Client-side and visual only.** The coins still exist and you still pick them up. Nothing is sent to the server.
 - **No config, no commands, no extra libraries.** Install it and it works.

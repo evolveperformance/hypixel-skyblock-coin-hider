@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * Skips the "item flies into the player" pickup animation and the pickup pop sound for hidden coins.
+ * Skips the "item flies into the player" pickup animation (and its pop) for hidden coins.
  * Mirrors vanilla's handling for item entities (shrink, remove) so the client stays in sync with the server.
  * Only this one client-side sound is dropped; every other sound is untouched.
  */
