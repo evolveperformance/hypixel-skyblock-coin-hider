@@ -4,7 +4,7 @@ plugins {
 
 version = "${property("mod_version")}+${property("minecraft_version")}"
 group = "dev.coinhider"
-base.archivesName = "coin-hider"
+base.archivesName = "hypixel-skyblock-coin-hider"
 
 dependencies {
     minecraft("com.mojang:minecraft:${property("minecraft_version")}")
