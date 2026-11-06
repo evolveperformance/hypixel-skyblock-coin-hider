@@ -15,7 +15,7 @@ import net.minecraft.world.scores.Objective;
 import java.util.Locale;
 
 /**
- * Hides Hypixel SkyBlock coin drops (e.g. from the Coin Talisman). Always on while in SkyBlock, no config.
+ * Hides Hypixel SkyBlock coin drops (e.g. from the Talisman of Coins). Always on while in SkyBlock, no config.
  */
 public final class CoinHider implements ClientModInitializer {
     /** True while the sidebar scoreboard says SKYBLOCK (Hypixel shows it on every SkyBlock island). */

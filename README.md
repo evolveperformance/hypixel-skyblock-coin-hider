@@ -2,7 +2,7 @@
 
 <img src="icon.png" width="128" alt="Icon">
 
-Hides coin drops on the ground in Hypixel SkyBlock, like the coins from the **Coin Talisman**.
+Hides coin drops on the ground in Hypixel SkyBlock, like the coins from the **Talisman of Coins** (Coin Talisman).
 
 - **Coins are not drawn** on the floor.
 - **No pickup animation** for coins (the coin flying into you).
