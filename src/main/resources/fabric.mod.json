@@ -26,5 +26,6 @@
   "contact": {
     "sources": "https://github.com/evolveperformance/hypixel-skyblock-cheap-coins-hider",
     "issues": "https://github.com/evolveperformance/hypixel-skyblock-cheap-coins-hider/issues"
-  }
+  },
+  "icon": "assets/coinhider/icon.png"
 }
