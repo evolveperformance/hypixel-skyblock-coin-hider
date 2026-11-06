@@ -18,15 +18,15 @@ Something hidden that shouldn't be, or a coin that isn't? [Open an issue](https:
 
 ## Requirements
 
-Minecraft 26.1.2, Fabric Loader 0.18+, Fabric API, Java 25.
+Minecraft 26.1.x, 26.2 or 26.3 (pick the matching jar), Fabric Loader 0.18+, Fabric API, Java 25.
 
 ## Building
 
 ```
-./gradlew build
+sh build-all.sh
 ```
 
-The jar ends up in `build/libs/`.
+Builds one jar per supported Minecraft version into `build/libs/`. Versions are listed at the bottom of `build-all.sh`. `./gradlew build` alone builds the default from `gradle.properties` (26.1.2).
 
 ## License
 
